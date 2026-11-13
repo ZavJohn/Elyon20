@@ -1,0 +1,14 @@
+:root {
+  /* Importante: verde PROVISIONAL, sustituir con el valor HEX oficial de la marca. */
+  --color-green: #95E85C;
+  --color-green-rgb: 149, 232, 92;
+  --color-black: #090B0A;
+  --color-panel: #111512;
+  --color-panel-alt: #171C18;
+  --color-white: #F6F8F5;
+  --color-muted: #8C958D;
+  --color-border: rgba(246, 248, 245, .12);
+  --font-body: 'Montserrat', 'Century Gothic', Arial, sans-serif;
+  --font-display: 'Space Grotesk', 'Century Gothic', 'Montserrat', sans-serif;
+  --container-gutter: clamp(20px, 3.8vw, 64px);
+}
