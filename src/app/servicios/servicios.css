@@ -1,0 +1,50 @@
+/* Servicios: aislado en .sv-page; Hero/CTA globales ya existen. */
+.sv-page { background: var(--color-black); overflow: clip; }
+.sv-heading { margin-bottom: clamp(35px, 4.8vw, 70px); }
+.sv-card { display: flex; flex-direction: column; padding: clamp(26px, 2.45vw, 39px); background: #111612; border: 1px solid var(--color-border); border-radius: 17px; transition: border-color .3s ease, transform .3s ease, background .3s ease; }
+.sv-card:hover { transform: translateY(-5px); background: #161d17; border-color: rgba(var(--color-green-rgb), .55); }
+.sv-card__top { display: flex; align-items: center; justify-content: space-between; color: var(--color-green); margin-bottom: 38px; }
+.sv-card__top span { font-size: 12px; letter-spacing: .14em; color: #7e9181; }
+.sv-card h3 { font-size: clamp(23px, 2.05vw, 31px); line-height: 1.2; letter-spacing: -.05em; margin-bottom: 17px; }
+.sv-card p { font-size: 16px; line-height: 1.8; color: #aebdb0; flex: 1; }
+.sv-card__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 26px; }
+.sv-card__tags span { font-size: 12px; letter-spacing: .01em; font-weight: 600; color: #bed1c0; border: 1px solid rgba(var(--color-green-rgb), .22); border-radius: 40px; padding: 5px 9px; }
+.sv-bottom-action { margin-top: 42px; display: flex; justify-content: center; }
+.sv-bocca { background: #0c100d; }
+.sv-bocca__panel { border: 1px solid rgba(var(--color-green-rgb), .28); border-radius: 22px; overflow: hidden; background: #111712; }
+.sv-bocca__copy { padding: clamp(32px, 5.5vw, 85px); position: relative; z-index: 1; }
+.sv-highlight-title { font-size: clamp(36px, 4.8vw, 70px); line-height: 1.1; letter-spacing: -.065em; font-weight: 500; margin: 0 0 23px; }
+.sv-highlight-title span { color: var(--color-green); }
+.sv-bocca__copy > p, .sv-contpaqi__lead { color: #b8c3b9; font-size: 17px; line-height: 1.8; max-width: 660px; }
+.sv-bocca__chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 37px; }
+.sv-bocca__chips span { font-size: 13px; color: #d4e4d6; border: 1px solid rgba(var(--color-green-rgb), .35); border-radius: 90px; padding: 9px 13px; background: rgba(var(--color-green-rgb), .07); }
+.sv-bocca__visual { position: relative; min-height: 450px; display: grid; place-items: center; isolation: isolate; background: radial-gradient(circle at 50% 45%, rgba(var(--color-green-rgb), .15), transparent 66%), #0a0e0b; overflow: hidden; }
+.sv-bocca__visual::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,.026) 1px, transparent 1px); background-size: 48px 48px; z-index: -1; }
+.sv-bocca__orbit { position: absolute; border: 1px solid rgba(var(--color-green-rgb), .28); border-radius: 50%; width: min(73%, 380px); aspect-ratio: 1; transform: scaleY(.8) rotate(18deg); }
+.sv-bocca__orbit--two { width: min(96%, 490px); border-color: rgba(255,255,255,.08); transform: scaleY(.85) rotate(-20deg); }
+.sv-bocca__core { position: relative; width: 208px; aspect-ratio: 1; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; background: radial-gradient(circle at 20% 18%, #66b869, #379237 46%, #153f1b); box-shadow: inset -25px -30px 40px rgba(0,0,0,.3), 0 0 100px rgba(var(--color-green-rgb),.2); color: white; }
+.sv-bocca__core strong { font-family: var(--font-display); font-size: 33px; letter-spacing: -.05em; }
+.sv-bocca__core small { font-size: 9px; letter-spacing: .16em; font-weight: 700; }
+.sv-bocca__node { position: absolute; background: #18261a; border: 1px solid rgba(var(--color-green-rgb), .47); color: #e4f1e4; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; font-size: 12px; letter-spacing: .05em; font-weight: 700; box-shadow: 0 8px 35px rgba(0,0,0,.3); }
+.sv-bocca__node svg { color: var(--color-green); }
+.sv-bocca__node--one { top: 18%; left: 13%; }
+.sv-bocca__node--two { top: 25%; right: 9%; }
+.sv-bocca__node--three { bottom: 20%; left: 19%; }
+.sv-contpaqi { border-top: 1px solid var(--color-border); }
+.sv-contpaqi__lead { margin-bottom: 32px; }
+.sv-contpaqi__panel { background: #141a15; border: 1px solid var(--color-border); border-radius: 20px; padding: clamp(28px, 4vw, 57px); }
+.sv-contpaqi__wordmark { font-family: var(--font-display); font-size: clamp(33px, 4.5vw, 65px); line-height: 1; letter-spacing: -.07em; font-weight: 700; color: #f3f6f3; }
+.sv-contpaqi__wordmark span { font-size: 14px; position: relative; top: -2em; margin-left: 2px; }
+.sv-contpaqi__panel > p { margin-top: 13px; margin-bottom: 27px; font-size: 16px; color: #aebbb0; }
+.sv-contpaqi__item { display: flex; align-items: center; gap: 11px; border: 1px solid rgba(255,255,255,.08); background: #0e130f; border-radius: 11px; padding: 17px 12px; font-size: 14px; font-weight: 600; min-height: 70px; }
+.sv-contpaqi__item svg { color: var(--color-green); flex-shrink: 0; }
+.sv-contpaqi__note { display: block; margin-top: 25px; font-size: 11px; line-height: 1.6; color: #87948a; }
+.sv-process { background: #0c110d; border-top: 1px solid var(--color-border); }
+.sv-process__card { padding: 27px; min-height: 231px; display: flex; flex-direction: column; border: 1px solid var(--color-border); border-radius: 13px; background: #141914; }
+.sv-process__card > span { font-size: 13px; font-weight: 700; color: var(--color-green); letter-spacing: .1em; }
+.sv-process__card h3 { font-size: 23px; margin: 17px 0 10px; }
+.sv-process__card p { color: #adb9ad; font-size: 15px; line-height: 1.75; flex: 1; }
+.sv-process__card > svg { align-self: flex-end; color: var(--color-green); margin-top: 12px; }
+@media(max-width: 991.98px) { .sv-bocca__visual { min-height: 400px; } }
+@media(max-width: 575.98px) { .sv-bocca__visual { min-height: 350px; } .sv-bocca__core { width: 174px; } .sv-bocca__node--one { left: 3%; } .sv-bocca__node--two { right: 3%; } .sv-bocca__node--three { left: 6%; } .sv-contpaqi__item { font-size: 12px; padding: 13px 8px; } }
+@media(prefers-reduced-motion:reduce) { .sv-card { transition: none; } .sv-card:hover { transform: none; } }

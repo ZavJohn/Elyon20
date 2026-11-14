@@ -1,0 +1,47 @@
+/* BOCCA: página autónoma, alineada con la identidad Elyon. */
+.bc-page { background: var(--color-black); overflow: clip; }
+.bc-title { font-size: clamp(36px,4.9vw,74px); line-height:1.07; font-weight: 500; letter-spacing:-.068em; margin-bottom:26px; }
+.bc-title span { color:var(--color-green); }
+.bc-lead { font-size:clamp(16px,1.33vw,19px); color:#b5c1b6; line-height:1.85; max-width:670px; margin-bottom:32px; }
+.bc-demo { position:relative; width:min(100%,530px); margin:auto; border:1px solid rgba(var(--color-green-rgb),.37); background:#121a13; border-radius:24px; padding:25px; box-shadow:0 20px 90px rgba(0,0,0,.35),0 0 80px rgba(var(--color-green-rgb),.06); }
+.bc-demo::before { content:''; position:absolute; z-index:-1; inset:-35px; background:radial-gradient(circle,rgba(var(--color-green-rgb),.17),transparent 65%); filter:blur(12px); pointer-events:none; }
+.bc-demo__head { display:flex; gap:13px; align-items:center; padding-bottom:22px; border-bottom:1px solid var(--color-border); }
+.bc-demo__avatar { background:var(--color-green); border-radius:14px; display:grid; place-items:center; width:46px; height:46px; color:white; flex-shrink:0; }
+.bc-demo__head strong { display:block; font-size:17px; line-height:1.45; }
+.bc-demo__head div:nth-child(2) span { color:#a1b2a5; display:block; font-size:12px; }
+.bc-demo__online { background:var(--color-green); margin-left:auto; width:8px; height:8px; border-radius:50%; box-shadow:0 0 13px rgba(var(--color-green-rgb),.65); }
+.bc-demo__messages { display:grid; justify-items:start; gap:16px; padding:30px 0; }
+.bc-demo__message { max-width:84%; border-radius:16px; padding:15px 18px; font-size:15px; line-height:1.6; background:#273129; color:#e2eee4; }
+.bc-demo__message--user { justify-self:end; background:#275d2c; color:white; border-bottom-right-radius:4px; }
+.bc-demo__message--assistant { border-bottom-left-radius:4px; }
+.bc-demo__footer { display:flex; align-items:center; gap:9px; border-top:1px solid var(--color-border); padding-top:20px; color:#8ca38f; font-size:10px; letter-spacing:.05em; }
+.bc-demo__footer svg { color:var(--color-green); flex-shrink:0; }
+.bc-demo__badge { position:absolute; top:-19px; right:17px; background:#172f1a; border:1px solid rgba(var(--color-green-rgb),.55); border-radius:40px; color:#d9efdc; display:flex; align-items:center; gap:8px; padding:9px 14px; font-size:12px; font-weight:700; letter-spacing:.07em; }
+.bc-demo__badge svg { color:var(--color-green); }
+.bc-features { background:#0c100d; border-top:1px solid var(--color-border); }
+.bc-heading { margin-bottom:clamp(35px,4.8vw,70px); }
+.bc-feature { padding:clamp(26px,3vw,44px); background:#151b16; border:1px solid var(--color-border); border-radius:17px; transition:border-color .25s ease; }
+.bc-feature:hover { border-color:rgba(var(--color-green-rgb),.5); }
+.bc-feature__top { display:flex; justify-content:space-between; align-items:center; color:var(--color-green); margin-bottom:37px; }
+.bc-feature__top span { font-size:13px; color:#859789; }
+.bc-feature h3 { font-size:clamp(22px,2.15vw,30px); margin-bottom:17px; letter-spacing:-.045em; }
+.bc-feature p { font-size:16px; line-height:1.8; color:#b3beb5; }
+.bc-flow { border-top:1px solid var(--color-border); }
+.bc-flow__grid { margin-top:35px; }
+.bc-flow__step { border-top:2px solid rgba(var(--color-green-rgb),.45); padding:28px 16px 20px; background:linear-gradient(180deg,rgba(var(--color-green-rgb),.05),transparent); }
+.bc-flow__step > span { font-size:13px; letter-spacing:.09em; color:#9cae9d; display:block; margin-bottom:26px; }
+.bc-flow__step svg { color:var(--color-green); margin-bottom:19px; }
+.bc-flow__step h3 { font-size:24px; margin-bottom:12px; }
+.bc-flow__step p { font-size:15px; line-height:1.75; color:#b3bfb4; }
+.bc-industries { background:#0d110e; border-top:1px solid var(--color-border); }
+.bc-back-link { display:inline-flex; align-items:center; gap:10px; color:white; font-size:16px; font-weight:700; border-bottom:1px solid var(--color-green); padding-bottom:9px; }
+.bc-back-link:hover { color:var(--color-green); }
+.bc-industries__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
+.bc-industries__grid > div { padding:18px 16px; background:#161d17; border:1px solid var(--color-border); border-radius:9px; font-size:15px; font-weight:600; display:flex; align-items:center; gap:14px; }
+.bc-industries__grid span { color:var(--color-green); font-size:11px; }
+.bc-contact { margin-top:clamp(52px,7vw,110px); border-radius:18px; border:1px solid rgba(var(--color-green-rgb),.3); background:linear-gradient(115deg,rgba(var(--color-green-rgb),.12),#121812 65%); padding:clamp(28px,4vw,58px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.bc-contact span { color:var(--color-green); font-size:12px; font-weight:700; letter-spacing:.15em; }
+.bc-contact h3 { font-size:clamp(26px,3vw,43px); max-width:710px; margin:12px 0 0; letter-spacing:-.05em; }
+.bc-contact .button { flex-shrink:0; }
+@media(max-width:767.98px) { .bc-contact { flex-direction:column; align-items:flex-start; } }
+@media(max-width:480px) { .bc-demo { padding:17px; } .bc-demo__message { font-size:13px; } .bc-industries__grid { grid-template-columns:1fr; } }

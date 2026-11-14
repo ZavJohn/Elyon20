@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navigation, site } from "@/data/site";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,18 +33,24 @@ export function Header() {
         <nav className="header-inner" aria-label="Navegación principal">
           <BrandLogo />
 
-          <ul className="header-links d-none d-lg-flex">
+          <ul className="header-links d-none d-xl-flex">
             {navigation.map((item) => (
-              <li key={item.href}><a href={item.href}>{item.label}</a></li>
+              <li key={item.href}>
+                {item.href.startsWith("http") ? (
+                  <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>
+                ) : (
+                  <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>
+                )}
+              </li>
             ))}
           </ul>
 
-          <a className="header-cta d-none d-lg-inline-flex" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+          <a className="header-cta d-none d-xl-inline-flex" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
             Escríbenos por WhatsApp <ArrowUpRight size={17} strokeWidth={1.9} aria-hidden="true" />
           </a>
 
           <button
-            className="mobile-menu-toggle d-inline-flex d-lg-none"
+            className="mobile-menu-toggle d-inline-flex d-xl-none"
             type="button"
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-controls="mobile-navigation"
@@ -56,7 +65,13 @@ export function Header() {
       <div id="mobile-navigation" className={`mobile-nav ${open ? "mobile-nav--open" : ""}`} inert={!open}>
         <ul>
           {navigation.map((item) => (
-            <li key={item.href}><a href={item.href} onClick={() => setOpen(false)}>{item.label}</a></li>
+            <li key={item.href}>
+              {item.href.startsWith("http") ? (
+                <a href={item.href} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>{item.label}</a>
+              ) : (
+                <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}>{item.label}</Link>
+              )}
+            </li>
           ))}
         </ul>
         <a className="button button--green mobile-nav__cta" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>

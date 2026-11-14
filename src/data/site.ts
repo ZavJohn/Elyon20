@@ -8,9 +8,11 @@ export const site = {
   phoneHref: "tel:+527291315625",
   location: "México",
   whatsappUrl: "https://wa.me/527291315625",
-  bookingUrl: "https://elyondevs.com/agendar/",
+  bookingUrl: "/agendar",
+  calendlyUrl: "https://calendly.com/elyondevs/1a1",
   projectsUrl: "https://elyondevs.com/proyectos",
-  servicesUrl: "https://elyondevs.com/servicios",
+  servicesUrl: "/servicios",
+  boccaUrl: "/bocca",
   privacyUrl: "https://elyondevs.com/aviso-de-privacidad/", // Confirmar publicación al activar la página.
   logoUrl: "/images/logo.png",
   social: {
@@ -21,14 +23,15 @@ export const site = {
   },
 } as const;
 
-// Rutas reales para las páginas publicadas. Servicios y proyectos siguen enlazando
-// a sus secciones funcionales del Home hasta crear sus páginas interiores.
+// Rutas locales para páginas ya implementadas. Proyectos conserva el Home
+// hasta que se construya la página interior del portafolio.
 export const navigation = [
   { label: "Inicio", href: "/" },
-  { label: "Servicios", href: "/#servicios" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "BOCCA", href: "/bocca" },
   { label: "Proyectos", href: "/#proyectos" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Contacto", href: site.whatsappUrl },
+  { label: "Agendar", href: "/agendar" },
 ] as const;
 
 // El archivo se incorporará en public/videos/home_elyon.mp4.

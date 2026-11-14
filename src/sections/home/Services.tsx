@@ -2,6 +2,7 @@ import { ArrowUpRight, Bot, Code2, Globe2, Megaphone, Palette, Smartphone, Podca
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { services, type ServiceId } from "@/data/services";
 import { site } from "@/data/site";
+import Link from "next/link";
 
 const icons: Record<ServiceId, typeof Globe2> = {
   web: Globe2,
@@ -36,7 +37,7 @@ export function Services() {
           })}
         </div>
         <div className="section-bottom-action">
-          <a className="button button--outline" href={site.servicesUrl} target="_blank" rel="noopener noreferrer">Explora todos nuestros servicios <ArrowUpRight size={20} aria-hidden="true" /></a>
+          <Link className="button button--outline" href={site.servicesUrl}>Explora todos nuestros servicios <ArrowUpRight size={20} aria-hidden="true" /></Link>
         </div>
       </div>
     </section>

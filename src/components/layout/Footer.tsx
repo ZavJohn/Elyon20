@@ -1,4 +1,5 @@
 import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Podcast } from "lucide-react";
+import Link from "next/link";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { navigation, site } from "@/data/site";
 
@@ -29,7 +30,15 @@ export function Footer() {
           <div className="col-sm-5 col-lg-2">
             <h3 className="footer-title">Explora</h3>
             <ul className="footer-links">
-              {navigation.map((item) => <li key={item.href}><a href={item.href}>{item.label}</a></li>)}
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  {item.href.startsWith("http") ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>
+                  ) : (
+                    <Link href={item.href}>{item.label}</Link>
+                  )}
+                </li>
+              ))}
             </ul>
             <a className="footer-privacy" href={site.privacyUrl} target="_blank" rel="noopener noreferrer">Aviso de privacidad</a>
           </div>
@@ -39,7 +48,6 @@ export function Footer() {
             <a className="footer-contact-link" href={site.phoneHref}><Phone size={18} aria-hidden="true" />{site.phone}</a>
             <span className="footer-location"><MapPin size={18} aria-hidden="true" />{site.location}</span>
             <a className="footer-contact-action" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">Envíanos un WhatsApp <ArrowUpRight size={18} aria-hidden="true" /></a>
-            <a className="footer-booking" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">Agenda una asesoría <ArrowUpRight size={18} aria-hidden="true" /></a>
           </div>
         </div>
         <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">

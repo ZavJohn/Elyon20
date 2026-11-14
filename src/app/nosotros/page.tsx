@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  ArrowDownRight,
   ArrowUpRight,
   BadgeCheck,
   Compass,
@@ -15,6 +14,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 import "./nosotros.css";
@@ -131,41 +131,11 @@ const reasons = [
 export default function NosotrosPage() {
   return (
     <div className="who-page">
-      <section className="who-hero" aria-labelledby="who-hero-title">
-        <div className="who-hero__grid" aria-hidden="true" />
-        <div className="who-hero__glow" aria-hidden="true" />
-        <div className="container-xxl who-hero__inner">
-          <div className="row align-items-center gy-5">
-            <div className="col-lg-7">
-              <SectionLabel>El origen de Elyon Devs</SectionLabel>
-              <div className="who-hero__index">/ CONÓCENOS — TECNOLOGÍA CON PROPÓSITO</div>
-              <h1 id="who-hero-title" className="who-hero__title">
-                Creamos <span className="who-hero__title-outline">tecnología.</span>
-                <br />Construimos <span className="who-hero__title-accent">confianza.</span>
-              </h1>
-              <p className="who-hero__lead">
-                Detrás de cada solución hay personas, experiencia y una convicción: la tecnología debe
-                simplificar la vida y generar valor real.
-              </p>
-              <a className="who-hero__scroll" href="#nuestra-historia">
-                Descubre nuestra historia <ArrowDownRight size={22} strokeWidth={1.6} aria-hidden="true" />
-              </a>
-            </div>
-            <div className="col-lg-5">
-              <div className="who-hero__orb" aria-hidden="true">
-                <span className="who-hero__orbit who-hero__orbit--outer" />
-                <span className="who-hero__orbit who-hero__orbit--inner" />
-                <span className="who-hero__particle who-hero__particle--one" />
-                <span className="who-hero__particle who-hero__particle--two" />
-                <span className="who-hero__particle who-hero__particle--three" />
-                <span className="who-hero__orb-core"><span>ED</span></span>
-                <span className="who-hero__orb-caption">IDEAS · PROPÓSITO · IMPACTO</span>
-              </div>
-            </div>
-          </div>
-          <div className="who-hero__bottom"><span>DISEÑAMOS SOLUCIONES, DESARROLLAMOS CONFIANZA.</span><span>01 / ELYON DEVS</span></div>
-        </div>
-      </section>
+      <InnerPageHero
+        eyebrow="CONOCE ELYON DEVS"
+        title="Nosotros"
+        description="Tecnología y creatividad con propósito. Conoce a las personas, la historia y los valores que impulsan nuestras soluciones."
+      />
 
       <section className="section who-intro" id="que-hacemos" aria-labelledby="who-intro-title">
         <div className="container-xxl">
@@ -215,7 +185,7 @@ export default function NosotrosPage() {
 
       <section className="section who-values" id="valores" aria-labelledby="who-values-title">
         <div className="container-xxl">
-          <div className="section-heading row align-items-end gy-4"><div className="col-lg-8"><SectionLabel>Lo que nos guía</SectionLabel><h2 className="section-title" id="who-values-title">Nuestros valores.<br /><span className="text-dim">Nuestra forma de trabajar.</span></h2></div><div className="col-lg-4"><p className="section-intro">Los principios no se quedan en palabras: están presentes en cada decisión, relación y entrega.</p></div></div>
+          <div className="section-heading row align-items-end gy-4"><div className="col-lg-8"><SectionLabel>Lo que nos guía</SectionLabel><h2 className="section-title" id="who-values-title">Nuestros valores.<br /><span className="text-elyon">Nuestra forma de trabajar.</span></h2></div><div className="col-lg-4"><p className="section-intro">Los principios no se quedan en palabras: están presentes en cada decisión, relación y entrega.</p></div></div>
           <div className="row g-3 g-lg-4">{values.map(({ number, title, description, Icon }) => (
             <div className="col-md-6 col-xl-4" key={number}><article className="who-value-card"><div className="who-value-card__top"><Icon size={36} strokeWidth={1.4} aria-hidden="true" /><span>{number} / 06</span></div><div><h3>{title}</h3><p>{description}</p></div></article></div>
           ))}</div>
@@ -232,9 +202,9 @@ export default function NosotrosPage() {
       </section>
 
       <section className="section who-capabilities" aria-labelledby="who-capabilities-title"><div className="container-xxl">
-        <div className="row gy-4 align-items-end section-heading"><div className="col-lg-8"><SectionLabel>Lo que podemos construir</SectionLabel><h2 className="section-title" id="who-capabilities-title">Una visión integral.<br /><span className="text-dim">Múltiples soluciones.</span></h2></div><div className="col-lg-4"><p className="section-intro">Desde el primer concepto hasta la puesta en marcha: diferentes disciplinas que trabajan juntas.</p></div></div>
+        <div className="row gy-4 align-items-end section-heading"><div className="col-lg-8"><SectionLabel>Lo que podemos construir</SectionLabel><h2 className="section-title" id="who-capabilities-title">Una visión integral.<br /><span className="text-elyon">Múltiples soluciones.</span></h2></div><div className="col-lg-4"><p className="section-intro">Desde el primer concepto hasta la puesta en marcha: diferentes disciplinas que trabajan juntas.</p></div></div>
         <div className="who-capabilities__list">{services.map((service, index) => <div className="who-capabilities__item" key={service.id}><span>{String(index + 1).padStart(2, "0")}</span><h3>{service.title}</h3><ArrowUpRight size={22} strokeWidth={1.5} aria-hidden="true" /></div>)}</div>
-        <div className="section-bottom-action"><a className="button button--outline" href="/#servicios">Explora nuestras especialidades <ArrowUpRight size={20} aria-hidden="true" /></a></div>
+        <div className="section-bottom-action"><a className="button button--outline" href="/servicios">Explora nuestras especialidades <ArrowUpRight size={20} aria-hidden="true" /></a></div>
       </div></section>
       {/* El CTA global 'Construyamos algo extraordinario' se renderiza desde src/app/layout.tsx. */}
     </div>
