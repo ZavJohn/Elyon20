@@ -9,6 +9,7 @@ import { site } from "@/data/site";
 const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LfiYxosAAAAACBsvaGap5aun2hW3kWe3Galrwu5";
 
 type Recaptcha = {
+  ready?: (callback: () => void) => void;
   render: (container: HTMLElement, options: {
     sitekey: string;
     theme: "dark";
@@ -30,25 +31,64 @@ const serviceOptions = [
 export function ContactForm() {
   const captchaContainer = useRef<HTMLDivElement>(null);
   const captchaWidget = useRef<number | null>(null);
-  const [scriptReady, setScriptReady] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if (!scriptReady || !captchaContainer.current || !window.grecaptcha || captchaWidget.current !== null) return;
-    try {
-      captchaWidget.current = window.grecaptcha.render(captchaContainer.current, {
-        sitekey: SITE_KEY,
-        theme: "dark",
-        callback: (token) => setCaptchaToken(token),
-        "expired-callback": () => setCaptchaToken(""),
-        "error-callback": () => { setCaptchaToken(""); setMessage("No se pudo verificar reCAPTCHA. Inténtalo de nuevo."); },
-      });
-    } catch {
-      setMessage("No se pudo cargar la verificación. Puedes escribirnos por WhatsApp.");
-    }
-  }, [scriptReady]);
+    // La API puede aparecer en window antes de que su método render esté listo.
+    // No dependemos únicamente del evento onReady de next/script.
+    let active = true;
+    let waitingForReady = false;
+    let checks = 0;
+    let timer: number | undefined;
+
+    const stop = () => {
+      if (timer !== undefined) window.clearInterval(timer);
+    };
+
+    const renderCaptcha = () => {
+      if (!active || !captchaContainer.current || captchaWidget.current !== null) return;
+      const api = window.grecaptcha;
+      if (!api || typeof api.render !== "function") return;
+      try {
+        captchaWidget.current = api.render(captchaContainer.current, {
+          sitekey: SITE_KEY,
+          theme: "dark",
+          callback: (token) => setCaptchaToken(token),
+          "expired-callback": () => setCaptchaToken(""),
+          "error-callback": () => {
+            setCaptchaToken("");
+            setMessage("No se pudo verificar reCAPTCHA. Inténtalo de nuevo.");
+          },
+        });
+        stop();
+      } catch (error) {
+        console.error("Error al renderizar reCAPTCHA:", error);
+        setMessage("No se pudo mostrar reCAPTCHA. Recarga la página o escríbenos por WhatsApp.");
+        stop();
+      }
+    };
+
+    const checkRecaptcha = () => {
+      if (!active || captchaWidget.current !== null) { stop(); return; }
+      const api = window.grecaptcha;
+      if (api && typeof api.render === "function" && !waitingForReady) {
+        waitingForReady = true;
+        if (typeof api.ready === "function") api.ready(renderCaptcha);
+        else renderCaptcha();
+      }
+      checks += 1;
+      if (checks >= 60 && captchaWidget.current === null) {
+        stop();
+        setMessage("reCAPTCHA tardó demasiado en cargar. Recarga la página o contáctanos por WhatsApp.");
+      }
+    };
+
+    timer = window.setInterval(checkRecaptcha, 250);
+    checkRecaptcha();
+    return () => { active = false; stop(); };
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -104,7 +144,7 @@ export function ContactForm() {
       <div className="ct-honeypot" aria-hidden="true"><label htmlFor="ct-website">Sitio web (dejar vacío)</label><input id="ct-website" name="website" type="text" autoComplete="off" tabIndex={-1} /></div>
       <p className="ct-privacy-summary">Elyon Devs recaba tu nombre, correo y los datos que compartas para responderte, preparar propuestas y dar seguimiento a tu solicitud. Puedes limitar el uso de tus datos o ejercer tus derechos escribiendo a {site.email}. Consulta el <a href={site.privacyUrl}>aviso integral de privacidad</a>.</p>
       <label className="ct-consent"><input required type="checkbox" name="privacyAccepted" /> <span>He leído el <a href={site.privacyUrl}>aviso de privacidad</a>. <strong>*</strong></span></label>
-      <div className="ct-captcha"><div ref={captchaContainer} /><Script src="https://www.google.com/recaptcha/api.js?render=explicit" strategy="afterInteractive" onReady={() => setScriptReady(true)} onError={() => setMessage("No pudimos cargar reCAPTCHA. Inténtalo nuevamente.")} /></div>
+      <div className="ct-captcha"><div ref={captchaContainer} /><Script src="https://www.google.com/recaptcha/api.js?render=explicit" strategy="afterInteractive" onError={() => setMessage("No pudimos cargar reCAPTCHA. Inténtalo nuevamente.")} /></div>
       <div className="ct-actions">
         <button type="submit" className="button button--green button--large" disabled={status === "sending"}>
           {status === "sending" ? <>Enviando <LoaderCircle size={19} className="ct-spin" aria-hidden="true" /></> : <>Enviar mensaje <Send size={19} aria-hidden="true" /></>}
