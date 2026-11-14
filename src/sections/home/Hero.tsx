@@ -23,7 +23,7 @@ export function Hero() {
               </div>
               <div className="col-md-5 d-md-flex justify-content-md-end">
                 <a className="button button--green button--large" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
-                  Hablemos de tu proyecto <ArrowUpRight size={20} aria-hidden="true" />
+                  Agenda una asesoria <ArrowUpRight size={20} aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -35,7 +35,7 @@ export function Hero() {
               <div className="hero-art__orbit hero-art__orbit--inner" />
               <div className="hero-art__beam hero-art__beam--a" />
               <div className="hero-art__beam hero-art__beam--b" />
-              <div className="hero-art__center"><Asterisk size={73} strokeWidth={1.1} aria-hidden="true" /><span>IDEAS<br />TO<br />IMPACT</span></div>
+              <div className="hero-art__center"><Asterisk size={73} strokeWidth={1.1} aria-hidden="true" /><span>TRANSFORMAMOS<br />TUS<br />IDEAS</span></div>
               <div className="hero-art__badge hero-art__badge--top"><span className="status-dot" />CREATIVE ENGINEERING</div>
               <div className="hero-art__badge hero-art__badge--bottom"><MoveUpRight size={13} aria-hidden="true" />DESARROLLO DIGITAL</div>
               <div className="hero-art__spark hero-art__spark--one" />
@@ -45,7 +45,7 @@ export function Hero() {
         </div>
         <div className="hero-footnote d-flex justify-content-between align-items-center flex-wrap gap-3">
           <a href="#diferenciadores" className="scroll-cue">Explora lo que hacemos <ArrowDown size={17} aria-hidden="true" /></a>
-          <span>EST. TOLUCA, MÉXICO <span aria-hidden="true">✳</span> DISEÑO + DESARROLLO</span>
+          <span>DISEÑO <span aria-hidden="true">|</span> DESARROLLO </span>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export function ProjectCallout() {
   return (
-    <section className="project-callout" aria-labelledby="project-callout-title">
+    <section className="project-callout" id="contacto" aria-labelledby="project-callout-title">
       <div className="project-callout__waves" aria-hidden="true" />
       <div className="container-xxl">
         <div className="project-callout__card row g-0 align-items-center">
@@ -19,8 +19,8 @@ export function ProjectCallout() {
               <span className="project-callout__eyebrow"><span className="project-callout__pulse" /> CONSTRUYAMOS ALGO EXTRAORDINARIO</span>
               <h2 id="project-callout-title">¿Tienes un proyecto <em>en mente?</em></h2>
               <p>Nosotros ponemos la estrategia, el diseño y la tecnología para hacerlo realidad.</p>
-              <a className="project-callout__button" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
-                <span>Hablemos</span>
+              <a className="project-callout__button" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <span>Escríbenos por WhatsApp</span>
                 <span className="project-callout__button-circle"><ArrowUpRight aria-hidden="true" size={19} strokeWidth={2.2} /></span>
               </a>
             </div>

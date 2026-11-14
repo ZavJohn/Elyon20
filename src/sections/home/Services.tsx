@@ -1,6 +1,7 @@
-import { ArrowUpRight, Bot, Code2, Globe2, Megaphone, Palette, Smartphone } from "lucide-react";
+import { ArrowUpRight, Bot, Code2, Globe2, Megaphone, Palette, Smartphone, Podcast, Radio } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { services, type ServiceId } from "@/data/services";
+import { site } from "@/data/site";
 
 const icons: Record<ServiceId, typeof Globe2> = {
   web: Globe2,
@@ -9,6 +10,8 @@ const icons: Record<ServiceId, typeof Globe2> = {
   marketing: Megaphone,
   apps: Smartphone,
   automation: Bot,
+  podcast: Podcast,
+  streaming: Radio,
 };
 
 export function Services() {
@@ -24,14 +27,16 @@ export function Services() {
             const Icon = icons[service.id];
             return (
               <article className="service-row" key={service.id}>
-                <span className="service-row__number">0{index + 1}</span>
-                <div className="service-row__name"><Icon size={29} strokeWidth={1.35} aria-hidden="true" /><h3>{service.title}</h3></div>
+                <span className="service-row__number">{String(index + 1).padStart(2, "0")}</span>
+                <div className="service-row__name"><Icon size={33} strokeWidth={1.35} aria-hidden="true" /><h3>{service.title}</h3></div>
                 <p className="service-row__description">{service.description}</p>
                 <div className="service-row__tags">{service.specialties.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <ArrowUpRight className="service-row__arrow" size={24} strokeWidth={1.6} aria-hidden="true" />
               </article>
             );
           })}
+        </div>
+        <div className="section-bottom-action">
+          <a className="button button--outline" href={site.servicesUrl} target="_blank" rel="noopener noreferrer">Explora todos nuestros servicios <ArrowUpRight size={20} aria-hidden="true" /></a>
         </div>
       </div>
     </section>

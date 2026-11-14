@@ -1,4 +1,4 @@
-import { ArrowUpRight, Blocks, Lightbulb, Workflow, Handshake } from "lucide-react";
+import { Blocks, Lightbulb, Workflow, Handshake } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const features = [
@@ -25,9 +25,8 @@ export function Features() {
             return (
               <div className="col-md-6 col-xl-3" key={feature.title}>
                 <article className="feature-card">
-                  <div className="feature-card__top"><Icon size={30} strokeWidth={1.35} aria-hidden="true" /><span>0{index + 1}</span></div>
+                  <div className="feature-card__top"><Icon size={44} strokeWidth={1.35} aria-hidden="true" /><span>0{index + 1}</span></div>
                   <div><h3>{feature.title}</h3><p>{feature.text}</p></div>
-                  <ArrowUpRight className="feature-card__arrow" size={21} aria-hidden="true" />
                 </article>
               </div>
             );

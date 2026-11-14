@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navigation, site } from "@/data/site";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -27,11 +28,7 @@ export function Header() {
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="container-xxl">
         <nav className="header-inner" aria-label="Navegación principal">
-          {/* Wordmark provisional: reemplazar por SVG oficial de Elyon Devs. */}
-          <a href="#inicio" className="brand" aria-label="Elyon Devs, ir al inicio" onClick={() => setOpen(false)}>
-            <span className="brand-symbol" aria-hidden="true"><span /></span>
-            <span className="brand-text">elyon<span>devs</span><i>.</i></span>
-          </a>
+          <BrandLogo />
 
           <ul className="header-links d-none d-lg-flex">
             {navigation.map((item) => (
@@ -39,8 +36,8 @@ export function Header() {
             ))}
           </ul>
 
-          <a className="header-cta d-none d-lg-inline-flex" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
-            Agendar asesoría <ArrowUpRight size={17} strokeWidth={1.9} aria-hidden="true" />
+          <a className="header-cta d-none d-lg-inline-flex" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+            Escríbenos por WhatsApp <ArrowUpRight size={17} strokeWidth={1.9} aria-hidden="true" />
           </a>
 
           <button
@@ -62,8 +59,8 @@ export function Header() {
             <li key={item.href}><a href={item.href} onClick={() => setOpen(false)}>{item.label}</a></li>
           ))}
         </ul>
-        <a className="button button--green mobile-nav__cta" href={site.bookingUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-          Agendar asesoría <ArrowUpRight size={18} aria-hidden="true" />
+        <a className="button button--green mobile-nav__cta" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+          Escríbenos por WhatsApp <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </div>
     </header>

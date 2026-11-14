@@ -1,6 +1,6 @@
-# Elyon Devs 2.0 — Primera implementación
+# Elyon Devs
 
-Primera versión propia del Home de Elyon Devs, inspirada en una experiencia editorial oscura (Frezzar Home 8 Dark), **sin usar sus archivos ni su código propietario**.
+Primera versión propia del Home de Elyon Devs
 
 ## Stack
 
@@ -100,3 +100,15 @@ El reproductor usa controles accesibles de HTML5, no tiene autoplay ni descarga 
 - 52–65: Proyectos y cierre: «Diseñamos soluciones, desarrollamos confianza». CTA: Agendar asesoría.
 
 **Nota:** esta entrega incluye el reproductor, no un video institucional terminado; las imágenes o videos reales requieren materiales originales y autorizados.
+
+
+## Actualización incremental 4 — medios y enlaces
+
+- `public/images/logo.png`: logotipo oficial Elyon Devs (con transparencia de preferencia). Se adapta al header y al footer sin deformarse.
+- `public/videos/home_elyon.mp4`: video institucional reproducible en popup desde el botón central. Si falta, aparece un mensaje al abrirlo.
+- `public/images/home/`: miniaturas del portafolio, en WebP, 1200 × 900 px sugeridos: `newton.webp`, `rea-torres.webp`, `logistica-gruas.webp`, `servicio-auditivo.webp`, `makita.webp`, `fitos.webp`.
+- `public/images/clientes/`: logos individuales aprobados en PNG con fondo transparente (nombres en `src/data/clients.ts`).
+- Las miniaturas y logos faltantes muestran el nombre de la empresa de forma legible hasta subir archivos definitivos. Los pantallazos proporcionados son referencias; no se usaron recortes pequeños como logos finales.
+- CTA de WhatsApp: `https://wa.me/527291315625`; el Hero y el enlace de agendar del footer siguen usando `/agendar/`.
+- Verifica que la URL `/aviso-de-privacidad/` esté publicada antes de lanzar la web.
+- Valida que los casos y marcas (especialmente Makita, LEGO, Mattel y ADT) cuenten con aprobación para mostrarse como clientes.

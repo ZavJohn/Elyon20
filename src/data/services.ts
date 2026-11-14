@@ -1,4 +1,4 @@
-export type ServiceId = "web" | "software" | "branding" | "marketing" | "apps" | "automation";
+export type ServiceId = "web" | "software" | "branding" | "marketing" | "apps" | "automation" | "podcast" | "streaming";
 
 export interface Service {
   id: ServiceId;
@@ -43,5 +43,17 @@ export const services: Service[] = [
     title: "Automatización con IA",
     description: "Soluciones de automatización y asistentes inteligentes que ayudan a liberar tiempo y ordenar la operación.",
     specialties: ["Bots", "Flujos", "Asistentes IA"],
+  },
+  {
+    id: "podcast",
+    title: "Producción de podcast",
+    description: "Diseño, grabación, edición y producción audiovisual de podcasts para compartir el conocimiento y la voz de tu marca.",
+    specialties: ["Grabación", "Edición", "Distribución"],
+  },
+  {
+    id: "streaming",
+    title: "Transmisiones en vivo para empresas",
+    description: "Producción y operación técnica de eventos empresariales en directo, con experiencia en realización multicámara y transmisión digital.",
+    specialties: ["Eventos corporativos", "Multicámara", "Streaming"],
   },
 ];

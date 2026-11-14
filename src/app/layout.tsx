@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { site } from "@/data/site";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { ProjectCallout } from "@/sections/home/ProjectCallout";
 
 export const metadata: Metadata = {
   title: "Elyon Devs | Diseñamos soluciones, desarrollamos confianza",
@@ -25,7 +28,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es-MX">
-      <body>{children}</body>
+      <body>
+        <a className="skip-link" href="#contenido">Saltar al contenido</a>
+        <Header />
+        <main id="contenido">{children}</main>
+        <ProjectCallout />
+        <Footer />
+      </body>
     </html>
   );
 }

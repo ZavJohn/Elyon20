@@ -1,5 +1,13 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Podcast } from "lucide-react";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { navigation, site } from "@/data/site";
+
+const social = [
+  { label: "Facebook", url: site.social.facebook, Icon: Facebook },
+  { label: "Instagram", url: site.social.instagram, Icon: Instagram },
+  { label: "Spotify: Elyon Devs Podcast", url: site.social.spotify, Icon: Podcast },
+  { label: "LinkedIn", url: site.social.linkedin, Icon: Linkedin },
+];
 
 export function Footer() {
   return (
@@ -7,23 +15,30 @@ export function Footer() {
       <div className="container-xxl">
         <div className="row gy-5 justify-content-between">
           <div className="col-lg-5">
-            <a className="brand brand--footer" href="#inicio" aria-label="Volver al inicio de Elyon Devs">
-              <span className="brand-symbol" aria-hidden="true"><span /></span>
-              <span className="brand-text">elyon<span>devs</span><i>.</i></span>
-            </a>
+            <BrandLogo footer />
             <p className="footer-tagline">{site.tagline}</p>
             <p className="footer-description">Tecnología, creatividad y estrategia para transformar ideas en soluciones que impulsan negocios.</p>
+            <div className="footer-social" aria-label="Redes sociales">
+              {social.map(({ label, url, Icon }) => (
+                <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
+                  <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           </div>
           <div className="col-sm-5 col-lg-2">
             <h3 className="footer-title">Explora</h3>
             <ul className="footer-links">
               {navigation.map((item) => <li key={item.href}><a href={item.href}>{item.label}</a></li>)}
             </ul>
+            <a className="footer-privacy" href={site.privacyUrl} target="_blank" rel="noopener noreferrer">Aviso de privacidad</a>
           </div>
           <div className="col-sm-7 col-lg-4">
             <h3 className="footer-title">Conversemos</h3>
             <a className="footer-contact-link" href={`mailto:${site.email}`}><Mail size={18} aria-hidden="true" />{site.email}</a>
+            <a className="footer-contact-link" href={site.phoneHref}><Phone size={18} aria-hidden="true" />{site.phone}</a>
             <span className="footer-location"><MapPin size={18} aria-hidden="true" />{site.location}</span>
+            <a className="footer-contact-action" href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">Envíanos un WhatsApp <ArrowUpRight size={18} aria-hidden="true" /></a>
             <a className="footer-booking" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">Agenda una asesoría <ArrowUpRight size={18} aria-hidden="true" /></a>
           </div>
         </div>
