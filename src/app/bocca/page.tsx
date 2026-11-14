@@ -122,7 +122,6 @@ export default function BoccaPage() {
                 </div>
               </div>
             </div>
-            <div className="bc-contact"><div><span>¿LISTO PARA CONOCER BOCCA?</span><h3>Automatiza la atención sin perder el trato humano.</h3></div><a className="button button--green" href={boccaWhatsApp} target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp <ArrowUpRight size={19} aria-hidden="true" /></a></div>
           </div>
         </section>
       </div>

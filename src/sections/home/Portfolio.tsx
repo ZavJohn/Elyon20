@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ProjectThumbnail } from "@/components/ui/ProjectThumbnail";
 import { projects } from "@/data/projects";
@@ -11,7 +12,7 @@ export function Portfolio() {
         <div className="section-heading row align-items-end gy-4">
           <div className="col-lg-9">
             <SectionLabel>Trabajo seleccionado</SectionLabel>
-            <h2 className="section-title" id="portfolio-title">Proyectos que <span className="text-dim">hablan por nosotros.</span></h2>
+            <h2 className="section-title" id="portfolio-title">Proyectos que<br /><span className="text-elyon">hablan por nosotros.</span></h2>
           </div>
           <div className="col-lg-3 text-lg-end"><span className="section-overline">/ PORTAFOLIO ELYON</span></div>
         </div>
@@ -26,7 +27,7 @@ export function Portfolio() {
           ))}
         </div>
         <div className="section-bottom-action">
-          <a className="button button--outline" href={site.projectsUrl} target="_blank" rel="noopener noreferrer">Ver nuestro portafolio completo <ArrowUpRight size={20} aria-hidden="true" /></a>
+          <Link className="button button--outline" href={site.projectsUrl}>Ver nuestro portafolio completo <ArrowUpRight size={20} aria-hidden="true" /></Link>
         </div>
       </div>
     </section>

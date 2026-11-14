@@ -39,9 +39,4 @@
 .bc-industries__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
 .bc-industries__grid > div { padding:18px 16px; background:#161d17; border:1px solid var(--color-border); border-radius:9px; font-size:15px; font-weight:600; display:flex; align-items:center; gap:14px; }
 .bc-industries__grid span { color:var(--color-green); font-size:11px; }
-.bc-contact { margin-top:clamp(52px,7vw,110px); border-radius:18px; border:1px solid rgba(var(--color-green-rgb),.3); background:linear-gradient(115deg,rgba(var(--color-green-rgb),.12),#121812 65%); padding:clamp(28px,4vw,58px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
-.bc-contact span { color:var(--color-green); font-size:12px; font-weight:700; letter-spacing:.15em; }
-.bc-contact h3 { font-size:clamp(26px,3vw,43px); max-width:710px; margin:12px 0 0; letter-spacing:-.05em; }
-.bc-contact .button { flex-shrink:0; }
-@media(max-width:767.98px) { .bc-contact { flex-direction:column; align-items:flex-start; } }
 @media(max-width:480px) { .bc-demo { padding:17px; } .bc-demo__message { font-size:13px; } .bc-industries__grid { grid-template-columns:1fr; } }

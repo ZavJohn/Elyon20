@@ -40,7 +40,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <a className="footer-privacy" href={site.privacyUrl} target="_blank" rel="noopener noreferrer">Aviso de privacidad</a>
+            <Link className="footer-privacy" href={site.privacyUrl}>Aviso de privacidad</Link>
           </div>
           <div className="col-sm-7 col-lg-4">
             <h3 className="footer-title">Conversemos</h3>

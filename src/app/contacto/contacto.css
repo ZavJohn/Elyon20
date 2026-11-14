@@ -1,0 +1,47 @@
+/* Página de contacto: scope propio, compatible con Bootstrap y tokens del sitio. */
+.ct-page { overflow: clip; background: var(--color-black); }
+.ct-main .section-title { font-size: clamp(39px, 4.65vw, 68px); }
+.ct-lead { font-size: clamp(16px, 1.25vw, 18px); color: #bac8bd; line-height: 1.85; margin: 30px 0 44px; max-width: 540px; }
+.ct-contact-list { border-top: 1px solid var(--color-border); }
+.ct-contact-list > a { display: flex; gap: 20px; align-items: center; padding: 22px 4px; border-bottom: 1px solid var(--color-border); transition: color .25s ease; }
+.ct-contact-list > a > span:nth-child(2) { display: grid; gap: 3px; flex: 1; min-width: 0; }
+.ct-contact-list__icon { color: var(--color-green); width: 47px; height: 47px; border: 1px solid rgba(var(--color-green-rgb),.3); background: rgba(var(--color-green-rgb),.08); border-radius: 13px; display: grid; place-items: center; flex-shrink: 0; }
+.ct-contact-list small { color: #9eafa2; font-size: 13px; }
+.ct-contact-list strong { color: #f3f6f3; font-size: clamp(15px, 1.25vw, 18px); font-weight: 600; overflow-wrap: anywhere; }
+.ct-contact-list > a > svg { color: var(--color-green); flex-shrink: 0; }
+.ct-contact-list > a:hover strong { color: #8bd18d; }
+.ct-location { display: flex; align-items: center; gap: 12px; color: #a7baaa; margin-top: 28px; font-size: 15px; }
+.ct-location svg { color: var(--color-green); }
+.ct-panel { background: #131a14; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: clamp(25px, 3.6vw, 55px); }
+.ct-panel__eyebrow { font-size: 12px; color: var(--color-green); font-weight: 700; letter-spacing: .13em; margin-bottom: 14px; }
+.ct-panel h3 { font-size: clamp(28px, 3vw, 43px); line-height: 1.15; }
+.ct-panel__intro { color: #b6c4b9; font-size: 16px; line-height: 1.75; margin: 14px 0 35px; }
+.ct-form label:not(.ct-consent) { display: block; color: #e6efe7; font-size: 14px; font-weight: 600; margin-bottom: 9px; }
+.ct-form label span, .ct-consent strong { color: #70bf75; }
+.ct-form label small { color: #a4b4a7; font-size: 12px; font-weight: 400; }
+.ct-form input:not([type=checkbox]), .ct-form select, .ct-form textarea { display: block; width: 100%; min-height: 54px; border-radius: 10px; border: 1px solid rgba(255,255,255,.18); padding: 13px 16px; background: #0b110d; color: white; font-size: 15px; outline: none; transition: border-color .2s, box-shadow .2s; }
+.ct-form textarea { resize: vertical; min-height: 130px; }
+.ct-form input:focus, .ct-form select:focus, .ct-form textarea:focus { border-color: #58aa5d; box-shadow: 0 0 0 3px rgba(var(--color-green-rgb),.14); }
+.ct-form input::placeholder, .ct-form textarea::placeholder { color: #8e9c91; }
+.ct-form select:invalid { color: #98a79b; }
+.ct-consent { display: flex; gap: 11px; margin: 25px 0 20px; align-items: flex-start; cursor: pointer; color: #c4d1c6; font-size: 14px; line-height: 1.65; }
+.ct-consent input { width: 18px; height: 18px; margin-top: 4px; flex-shrink: 0; accent-color: #379237; }
+.ct-consent a { color: #90d295; text-decoration: underline; text-underline-offset: 3px; }
+.ct-captcha { min-height: 85px; max-width: 100%; overflow-x: auto; }
+.ct-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 24px; }
+.ct-actions button:disabled { opacity: .65; cursor: wait; }
+.ct-actions > span { color: #a8b9ac; font-size: 14px; }
+.ct-actions > span a { display: inline-flex; align-items: center; gap: 4px; color: #86c88b; }
+.ct-feedback { font-size: 15px; padding: 13px 16px; margin-top: 18px; border: 1px solid rgba(255,255,255,.15); border-radius: 9px; }
+.ct-feedback--sent { border-color: rgba(var(--color-green-rgb),.48); color: #adf0b1; }
+.ct-feedback--error { border-color: rgba(220,110,92,.48); color: #f1b4aa; }
+.ct-form__note { margin-top: 18px; font-size: 12px; line-height: 1.6; color: #83998a; }
+.ct-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.ct-spin { animation: ct-rotate .9s linear infinite; }
+@keyframes ct-rotate { to { transform: rotate(360deg); } }
+@media (max-width: 991.98px) { .ct-panel { margin-top: 15px; } }
+@media (prefers-reduced-motion: reduce) { .ct-spin { animation: none; } }
+
+/* Aviso breve visible junto al formulario, sin consentimientos publicitarios implícitos. */
+.ct-privacy-summary { margin: 24px 0 10px; color: #a8baac; font-size: 13px; line-height: 1.8; }
+.ct-privacy-summary a { color: #92da96; text-decoration: underline; text-underline-offset: 3px; }

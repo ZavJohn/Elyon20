@@ -20,7 +20,7 @@ export function Services() {
     <section className="section services-section" id="servicios" aria-labelledby="services-title">
       <div className="container-xxl">
         <div className="section-heading row align-items-end gy-4">
-          <div className="col-lg-8"><SectionLabel>Nuestras especialidades</SectionLabel><h2 className="section-title" id="services-title">Ideas que se convierten<br /><span className="text-dim">en soluciones reales.</span></h2></div>
+          <div className="col-lg-8"><SectionLabel>Nuestras especialidades</SectionLabel><h2 className="section-title" id="services-title">Ideas que se convierten<br /><span className="text-elyon">en soluciones reales.</span></h2></div>
           <div className="col-lg-4"><p className="section-intro">Servicios integrales para desarrollar, conectar y hacer crecer tu negocio en el entorno digital.</p></div>
         </div>
         <div className="services-list">

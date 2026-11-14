@@ -48,3 +48,13 @@
 @media(max-width: 991.98px) { .sv-bocca__visual { min-height: 400px; } }
 @media(max-width: 575.98px) { .sv-bocca__visual { min-height: 350px; } .sv-bocca__core { width: 174px; } .sv-bocca__node--one { left: 3%; } .sv-bocca__node--two { right: 3%; } .sv-bocca__node--three { left: 6%; } .sv-contpaqi__item { font-size: 12px; padding: 13px 8px; } }
 @media(prefers-reduced-motion:reduce) { .sv-card { transition: none; } .sv-card:hover { transform: none; } }
+
+/* Por qué elegirnos: cierre de contenido, antes del CTA global */
+.sv-why { background: #0c110d; border-top: 1px solid var(--color-border); }
+.sv-why__card { display: flex; flex-direction: column; padding: clamp(26px, 3vw, 43px); border: 1px solid var(--color-border); border-radius: 17px; background: #141a15; transition: border-color .25s ease, transform .25s ease; }
+.sv-why__card:hover { border-color: rgba(var(--color-green-rgb), .48); transform: translateY(-3px); }
+.sv-why__card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; color: var(--color-green); }
+.sv-why__card-top span { color: #859689; font-size: 13px; letter-spacing: .12em; font-weight: 700; }
+.sv-why__card h3 { font-size: clamp(23px, 2vw, 29px); line-height: 1.22; margin-bottom: 16px; }
+.sv-why__card p { color: #b4c2b7; font-size: 16px; line-height: 1.8; }
+@media (prefers-reduced-motion: reduce) { .sv-why__card { transition: none; } .sv-why__card:hover { transform: none; } }

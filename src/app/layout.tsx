@@ -9,6 +9,7 @@ import { ProjectCallout } from "@/sections/home/ProjectCallout";
 export const metadata: Metadata = {
   title: "Elyon Devs | Diseñamos soluciones, desarrollamos confianza",
   description: site.description,
+  icons: { icon: "/images/favicon.ico", shortcut: "/images/favicon.ico" },
   metadataBase: new URL("https://elyondevs.com"),
   openGraph: {
     type: "website",

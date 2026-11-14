@@ -10,10 +10,10 @@ export const site = {
   whatsappUrl: "https://wa.me/527291315625",
   bookingUrl: "/agendar",
   calendlyUrl: "https://calendly.com/elyondevs/1a1",
-  projectsUrl: "https://elyondevs.com/proyectos",
+  projectsUrl: "/proyectos",
   servicesUrl: "/servicios",
   boccaUrl: "/bocca",
-  privacyUrl: "https://elyondevs.com/aviso-de-privacidad/", // Confirmar publicación al activar la página.
+  privacyUrl: "/aviso-de-privacidad",
   logoUrl: "/images/logo.png",
   social: {
     facebook: "https://www.facebook.com/ElyonDevs",
@@ -23,15 +23,14 @@ export const site = {
   },
 } as const;
 
-// Rutas locales para páginas ya implementadas. Proyectos conserva el Home
-// hasta que se construya la página interior del portafolio.
+// Rutas internas disponibles en el sitio; se comparten entre header y footer.
 export const navigation = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/servicios" },
   { label: "BOCCA", href: "/bocca" },
-  { label: "Proyectos", href: "/#proyectos" },
+  { label: "Proyectos", href: "/proyectos" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Agendar", href: "/agendar" },
+  { label: "Contacto", href: "/contacto" },
 ] as const;
 
 // El archivo se incorporará en public/videos/home_elyon.mp4.

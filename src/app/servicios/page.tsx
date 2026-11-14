@@ -4,7 +4,8 @@ import {
   ArrowRight, ArrowUpRight, Bot, Code2, Globe2, Megaphone,
   Palette, Smartphone, Podcast, Radio, MessagesSquare, CalendarCheck2,
   ChartColumnIncreasing, Settings2, CircleCheck, FileText, Handshake,
-  MonitorSmartphone, Wrench, Rocket,
+  MonitorSmartphone, Wrench, Rocket, Target, Layers3,
+  ShieldCheck, HeartHandshake, TrendingUp, ScanSearch,
 } from "lucide-react";
 import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -38,6 +39,15 @@ const process = [
   { title: "Probamos", description: "Revisamos funcionamiento, integramos observaciones y ajustamos." },
   { title: "Entregamos", description: "Ponemos en marcha el proyecto y compartimos sus recursos de uso." },
   { title: "Acompañamos", description: "Brindamos seguimiento y soporte para evolucionar tu solución." },
+];
+
+const reasons = [
+  { title: "Escuchamos antes de proponer", description: "Primero entendemos los procesos, desafíos y objetivos de tu empresa. Después definimos la solución.", Icon: ScanSearch },
+  { title: "Unimos distintas disciplinas", description: "Desarrollo, diseño, comunicación y automatización pueden trabajar juntos dentro de un mismo proyecto.", Icon: Layers3 },
+  { title: "Soluciones hechas a tu medida", description: "Adaptamos la tecnología a las necesidades reales de tu operación, sin obligarte a seguir procesos que no te funcionan.", Icon: Target },
+  { title: "Comunicación y claridad", description: "Acordamos alcances, entregables y prioridades para mantener decisiones y expectativas transparentes.", Icon: ShieldCheck },
+  { title: "Acompañamiento cercano", description: "Te guiamos durante el desarrollo, la implementación y las etapas posteriores de mejora.", Icon: HeartHandshake },
+  { title: "Pensamos en el futuro", description: "Buscamos soluciones que puedan mantenerse y evolucionar conforme cambian las necesidades de tu negocio.", Icon: TrendingUp },
 ];
 
 export default function ServiciosPage() {
@@ -103,6 +113,27 @@ export default function ServiciosPage() {
           </div>
         </section>
 
+        <section className="section sv-process" aria-labelledby="sv-process-title">
+          <div className="container-xxl">
+            <div className="row gy-4 align-items-end sv-heading">
+              <div className="col-lg-8"><SectionLabel>CÓMO TRABAJAMOS</SectionLabel><h2 className="section-title" id="sv-process-title">De la idea al resultado.<br /><span className="text-elyon">Con un proceso claro.</span></h2></div>
+              <div className="col-lg-4"><p className="section-intro">Una metodología ordenada, transparente y orientada a resultados, desde el primer contacto hasta el seguimiento.</p></div>
+            </div>
+            <div className="row g-3 g-xl-4">
+              {process.map((step, index) => (
+                <div className="col-md-6 col-xl-3" key={step.title}>
+                  <article className="sv-process__card h-100">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                    {index === process.length - 1 ? <Rocket size={24} aria-hidden="true" /> : <ArrowRight size={24} aria-hidden="true" />}
+                  </article>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section sv-contpaqi" aria-labelledby="sv-contpaqi-title">
           <div className="container-xxl">
             <div className="row g-5 align-items-center">
@@ -133,20 +164,27 @@ export default function ServiciosPage() {
           </div>
         </section>
 
-        <section className="section sv-process" aria-labelledby="sv-process-title">
+        <section className="section sv-why" aria-labelledby="sv-why-title">
           <div className="container-xxl">
             <div className="row gy-4 align-items-end sv-heading">
-              <div className="col-lg-8"><SectionLabel>CÓMO TRABAJAMOS</SectionLabel><h2 className="section-title" id="sv-process-title">De la idea al resultado.<br /><span className="text-elyon">Con un proceso claro.</span></h2></div>
-              <div className="col-lg-4"><p className="section-intro">Una metodología ordenada, transparente y orientada a resultados, desde el primer contacto hasta el seguimiento.</p></div>
+              <div className="col-lg-8">
+                <SectionLabel>POR QUÉ ELEGIRNOS</SectionLabel>
+                <h2 className="section-title" id="sv-why-title">Más que proveedores.<br /><span className="text-elyon">Aliados de tu crecimiento.</span></h2>
+              </div>
+              <div className="col-lg-4">
+                <p className="section-intro">Nos involucramos en tus retos y conectamos la estrategia con la ejecución para construir soluciones útiles, claras y sostenibles.</p>
+              </div>
             </div>
-            <div className="row g-3 g-xl-4">
-              {process.map((step, index) => (
-                <div className="col-md-6 col-xl-3" key={step.title}>
-                  <article className="sv-process__card h-100">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                    {index === process.length - 1 ? <Rocket size={24} aria-hidden="true" /> : <ArrowRight size={24} aria-hidden="true" />}
+            <div className="row g-3 g-lg-4">
+              {reasons.map(({ title, description, Icon }, index) => (
+                <div className="col-md-6 col-xl-4" key={title}>
+                  <article className="sv-why__card h-100">
+                    <div className="sv-why__card-top">
+                      <Icon size={38} strokeWidth={1.4} aria-hidden="true" />
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                    </div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
                   </article>
                 </div>
               ))}

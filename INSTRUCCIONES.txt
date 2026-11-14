@@ -1,0 +1,11 @@
+ELYON DEVS — Ampliación de portafolio
+
+Opción A: Sustituye public/data/proyectos.json con proyectos-elyon-actualizado.json.
+Opción B: Si tu archivo contiene los 10 proyectos compartidos, usa el parche desde la raíz:
+  patch --dry-run -p1 < ajustes-elyon-devs-v3.patch
+  patch -p1 < ajustes-elyon-devs-v3.patch
+
+Nuevas imágenes esperadas: public/images/portafolio/11.jpg hasta 23.jpg.
+Revisa títulos y descripciones contra las piezas originales antes de publicar; las capturas de referencia son mosaicos.
+Las miniaturas NO se incluyen en el paquete. Mantén la resolución sugerida de 1200x900 px.
+Si ya has editado el JSON respecto a los 10 registros proporcionados, usa la Opción A tras hacer una copia de respaldo, o integra manualmente solo los 13 objetos nuevos.

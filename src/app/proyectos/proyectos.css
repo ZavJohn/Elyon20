@@ -1,0 +1,31 @@
+/* Portafolio: estilos confinados a la página interior. */
+.pf-page { overflow: clip; background: var(--color-black); }
+.pf-intro { padding-bottom: clamp(24px, 3vw, 46px); }
+.pf-projects { padding-top: 5px; }
+.pf-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-bottom: 20px; }
+.pf-filter { border: 1px solid rgba(255,255,255,.14); background: #141b15; color: #c5d1c7; border-radius: 999px; padding: 11px 20px; min-height: 45px; font-size: 14px; font-weight: 600; transition: border-color .2s, color .2s, background .2s; }
+.pf-filter:hover { border-color: rgba(var(--color-green-rgb),.7); color: #fff; }
+.pf-filter--active, .pf-filter--active:hover { color: #fff; background: #226727; border-color: var(--color-green); }
+.pf-count { margin-bottom: 23px; color: #a3b2a5; font-size: 14px; }
+.pf-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--color-border); border-radius: 16px; background: #121713; transition: border-color .25s ease, transform .25s ease; }
+.pf-card:hover { border-color: rgba(var(--color-green-rgb),.45); transform: translateY(-4px); }
+.pf-card .project-thumb { aspect-ratio: 4/3; border-radius: 0; overflow: hidden; }
+.pf-card .project-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pf-card__body { padding: clamp(22px, 2.1vw, 32px); flex: 1; display: flex; flex-direction: column; }
+.pf-card__category { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #76b77a; }
+.pf-card__body h3 { font-size: clamp(24px, 2.1vw, 31px); margin: 12px 0 14px; line-height: 1.2; }
+.pf-card__body p { font-size: 16px; line-height: 1.75; color: #bac7bd; flex: 1; }
+.pf-card__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
+.pf-card__tags span { padding: 5px 9px; border-radius: 50px; border: 1px solid rgba(var(--color-green-rgb),.22); color: #c3d3c5; font-size: 12px; }
+.pf-capabilities { background: #0d120e; border-top: 1px solid var(--color-border); }
+.pf-discipline { padding: clamp(27px, 3vw, 45px); border-radius: 17px; border: 1px solid var(--color-border); background: #151c16; }
+.pf-discipline__top { display: flex; justify-content: space-between; align-items: center; color: var(--color-green); margin-bottom: 35px; }
+.pf-discipline__top span { color: #869d8a; letter-spacing: .13em; font-size: 13px; }
+.pf-discipline h3 { font-size: clamp(23px, 2.3vw, 32px); margin-bottom: 14px; }
+.pf-discipline p { font-size: 16px; color: #b2c1b5; line-height: 1.75; }
+@media (prefers-reduced-motion: reduce) { .pf-card { transition: none; } .pf-card:hover { transform: none; } }
+
+/* Enlace opcional de cada ficha, configurable desde proyectos.json. */
+.pf-card__link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: #74c17a; font-size: 15px; font-weight: 700; text-decoration: none; }
+.pf-card__link:hover { color: #fff; }
+.pf-empty { color: #b9c7bd; font-size: 18px; padding: 18px 0 36px; }

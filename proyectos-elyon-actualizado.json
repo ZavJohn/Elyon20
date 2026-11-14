@@ -1,0 +1,372 @@
+{
+  "proyectos": [
+    {
+      "id": "lgt-web",
+      "nombre": "Logística y Grúas Toluca — sitio web",
+      "cliente": "Logística y Grúas Toluca",
+      "descripcion": "Presencia digital para comunicar servicios de grúas, maniobras industriales y transporte especializado, facilitando el contacto y las solicitudes de cotización.",
+      "tipo": "Sitios web",
+      "imagen": "/images/portafolio/1.jpg",
+      "etiquetas": [
+        "Diseño web",
+        "Servicios industriales",
+        "UX"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 1
+    },
+    {
+      "id": "lgt-software",
+      "nombre": "Logística y Grúas Toluca — sistema integral",
+      "cliente": "Logística y Grúas Toluca",
+      "descripcion": "Desarrollo a medida para organizar servicios, cotizaciones, clientes, facturación administrativa, cobranza, nómina e indicadores de operación.",
+      "tipo": "Software",
+      "imagen": "/images/portafolio/2.jpg",
+      "etiquetas": [
+        "Software a medida",
+        "Operaciones",
+        "Administración"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 2
+    },
+    {
+      "id": "naseron-web",
+      "nombre": "NASERON México — sitio web",
+      "cliente": "NASERON México",
+      "descripcion": "Sitio corporativo orientado a la industria del mueble, con presentación de servicios técnicos para maquinaria y líneas de producción.",
+      "tipo": "Sitios web",
+      "imagen": "/images/portafolio/3.jpg",
+      "etiquetas": [
+        "WordPress",
+        "Industria",
+        "Diseño web"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 3
+    },
+    {
+      "id": "naseron-marketing",
+      "nombre": "NASERON México — marketing digital",
+      "cliente": "NASERON México",
+      "descripcion": "Planeación editorial B2B, creatividad para redes sociales, comunicación de servicios técnicos y estrategia de campañas digitales.",
+      "tipo": "Marketing digital",
+      "imagen": "/images/portafolio/4.jpg",
+      "etiquetas": [
+        "Estrategia B2B",
+        "Redes sociales",
+        "Campañas"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 4
+    },
+    {
+      "id": "naseron-audiovisual",
+      "nombre": "NASERON México — producción audiovisual",
+      "cliente": "NASERON México",
+      "descripcion": "Guiones, storyboards y videos especializados en mantenimiento, precisión y procesos de maquinaria industrial para comunicar su experiencia técnica.",
+      "tipo": "Audiovisual",
+      "imagen": "/images/portafolio/5.jpg",
+      "etiquetas": [
+        "Video corporativo",
+        "Guion",
+        "Producción"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 5
+    },
+    {
+      "id": "rea-torres",
+      "nombre": "Rea Torres y Asociados",
+      "cliente": "Rea Torres y Asociados",
+      "descripcion": "Diseño de una experiencia digital profesional para un despacho jurídico, enfocada en claridad de servicios, filosofía y confianza empresarial.",
+      "tipo": "Sitios web",
+      "imagen": "/images/portafolio/6.jpg",
+      "etiquetas": [
+        "Sitio corporativo",
+        "Servicios jurídicos",
+        "Identidad"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 6
+    },
+    {
+      "id": "servicio-auditivo",
+      "nombre": "Servicio Integral Auditivo",
+      "cliente": "Servicio Integral Auditivo",
+      "descripcion": "Presentación digital de servicios de diagnóstico y atención auditiva, con estructura informativa, navegación accesible y enfoque local.",
+      "tipo": "Sitios web",
+      "imagen": "/images/portafolio/7.jpg",
+      "etiquetas": [
+        "Salud",
+        "Sitio web",
+        "SEO local"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 7
+    },
+    {
+      "id": "newton",
+      "nombre": "Centro Educativo Newton",
+      "cliente": "Centro Educativo Newton",
+      "descripcion": "Experiencia web para comunicar la propuesta educativa, acercar información a las familias y fortalecer la presencia digital del centro.",
+      "tipo": "Sitios web",
+      "imagen": "/images/portafolio/8.jpg",
+      "etiquetas": [
+        "Educación",
+        "Diseño web",
+        "Comunicación"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 8
+    },
+    {
+      "id": "web-dif",
+      "nombre": "DIF Temoaya",
+      "cliente": "DIF Temoaya",
+      "descripcion": "Proyecto de presencia corporativa y comunicación digital a través de desarrollo web para fortalecer sus canales de contacto.",
+      "tipo": "Sitios web",
+      "imagen": "/images/portafolio/9.jpg",
+      "etiquetas": [
+        "Gobierno",
+        "Diseño Web",
+        "Comunicacioń"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 9
+    },
+    {
+      "id": "conalep-sifico",
+      "nombre": "SIFICO",
+      "cliente": "CONALEP",
+      "descripcion": "Sistema integral para control financiero y presupuestal del CONALEP.",
+      "tipo": "Software",
+      "imagen": "/images/portafolio/10.jpg",
+      "etiquetas": [
+        "Software",
+        "Automatización",
+        "Administración"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 10
+    },
+    {
+      "id": "fitos-identidad",
+      "nombre": "FITOS Natural — imagen y empaques",
+      "cliente": "FITOS Natural",
+      "descripcion": "Aplicaciones de identidad gráfica, presentación de productos naturales y materiales visuales para su línea de cuidado y bienestar.",
+      "tipo": "Branding",
+      "imagen": "/images/portafolio/11.jpg",
+      "etiquetas": [
+        "Identidad visual",
+        "Empaques",
+        "Diseño de producto"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 11
+    },
+    {
+      "id": "walmart-publicidad",
+      "nombre": "Walmart — materiales gráficos de campaña",
+      "cliente": "Walmart",
+      "descripcion": "Diseño de piezas gráficas promocionales e impresos de comunicación, con aplicaciones para campañas y material comercial.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/12.jpg",
+      "etiquetas": [
+        "Material impreso",
+        "Campañas",
+        "Comunicación visual"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 12
+    },
+    {
+      "id": "crayola-exhibidores",
+      "nombre": "Crayola — campañas y exhibición",
+      "cliente": "Crayola",
+      "descripcion": "Propuestas visuales para productos creativos, empaques y espacios de exhibición comercial con composiciones de alto impacto.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/13.jpg",
+      "etiquetas": [
+        "Exhibidores",
+        "Material POP",
+        "Diseño comercial"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 13
+    },
+    {
+      "id": "labello-campana",
+      "nombre": "Labello — comunicación gráfica y exhibición",
+      "cliente": "Labello",
+      "descripcion": "Material promocional de producto y recursos gráficos para exhibición en tiendas, con aplicaciones en displays y espacios de anaquel.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/14.jpg",
+      "etiquetas": [
+        "Campaña visual",
+        "Punto de venta",
+        "Exhibición"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 14
+    },
+    {
+      "id": "barbie-activaciones",
+      "nombre": "Barbie — diseño para punto de venta",
+      "cliente": "Barbie",
+      "descripcion": "Conceptos visuales para exhibición y promoción de productos, incluyendo espacios y materiales gráficos de presentación comercial.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/15.jpg",
+      "etiquetas": [
+        "Retail",
+        "Exhibidores",
+        "Material promocional"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 15
+    },
+    {
+      "id": "makita-merchandising",
+      "nombre": "Makita — artículos promocionales",
+      "cliente": "Makita",
+      "descripcion": "Aplicación de gráfica de marca en vasos, termos y gorras para materiales promocionales y de merchandising.",
+      "tipo": "Branding",
+      "imagen": "/images/portafolio/16.jpg",
+      "etiquetas": [
+        "Merchandising",
+        "Artículos promocionales",
+        "Aplicación de marca"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 16
+    },
+    {
+      "id": "makita-vestimenta",
+      "nombre": "Makita — indumentaria promocional",
+      "cliente": "Makita",
+      "descripcion": "Diseño gráfico aplicado a prendas promocionales, con propuestas visuales para chamarras y artículos de identidad comercial.",
+      "tipo": "Branding",
+      "imagen": "/images/portafolio/17.jpg",
+      "etiquetas": [
+        "Indumentaria",
+        "Identidad corporativa",
+        "Diseño aplicado"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 17
+    },
+    {
+      "id": "makita-aniversario",
+      "nombre": "Makita — campaña 25 aniversario México",
+      "cliente": "Makita",
+      "descripcion": "Composición gráfica conmemorativa por el 25 aniversario de la marca en México, enfocada en su comunicación visual.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/18.jpg",
+      "etiquetas": [
+        "Diseño conmemorativo",
+        "Campaña de marca",
+        "Gráfica publicitaria"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 18
+    },
+    {
+      "id": "makita-maktrak",
+      "nombre": "Makita — campaña MAKTRAK",
+      "cliente": "Makita",
+      "descripcion": "Piezas promocionales para presentar la línea MAKTRAK mediante creatividad gráfica orientada a producto.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/19.jpg",
+      "etiquetas": [
+        "Campaña publicitaria",
+        "Diseño de producto",
+        "Creatividad"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 19
+    },
+    {
+      "id": "makita-refacciones",
+      "nombre": "Makita — refacciones originales",
+      "cliente": "Makita",
+      "descripcion": "Diseño de material publicitario enfocado en comunicar la línea de refacciones originales y sus atributos comerciales.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/20.jpg",
+      "etiquetas": [
+        "Publicidad",
+        "Refacciones",
+        "Comunicación de producto"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 20
+    },
+    {
+      "id": "makita-xgt-retail",
+      "nombre": "Makita XGT — exhibición comercial",
+      "cliente": "Makita",
+      "descripcion": "Aplicaciones de gráfica y exhibición para la línea XGT, incluyendo mobiliario y comunicación visual dentro de espacios comerciales.",
+      "tipo": "Branding",
+      "imagen": "/images/portafolio/21.jpg",
+      "etiquetas": [
+        "Visual merchandising",
+        "Exhibición",
+        "Retail"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 21
+    },
+    {
+      "id": "makita-fachadas",
+      "nombre": "Makita — fachadas y espacios de marca",
+      "cliente": "Makita",
+      "descripcion": "Propuesta visual para fachada comercial y áreas de exhibición, con recursos gráficos y rotulación de la marca.",
+      "tipo": "Branding",
+      "imagen": "/images/portafolio/22.jpg",
+      "etiquetas": [
+        "Fachadas",
+        "Rotulación",
+        "Identidad en espacios"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 22
+    },
+    {
+      "id": "makita-impresos",
+      "nombre": "Makita — impresos y materiales promocionales",
+      "cliente": "Makita",
+      "descripcion": "Diseño de piezas impresas, folletos y presentaciones comerciales destinadas a comunicar productos y promociones en el punto de venta.",
+      "tipo": "Diseño gráfico",
+      "imagen": "/images/portafolio/23.jpg",
+      "etiquetas": [
+        "Material impreso",
+        "Folletos",
+        "Material POP"
+      ],
+      "enlace": "",
+      "publicado": true,
+      "orden": 23
+    }
+  ]
+}

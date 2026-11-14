@@ -15,7 +15,7 @@ export function Features() {
         <div className="section-heading row align-items-end gy-4">
           <div className="col-lg-7">
             <SectionLabel>Lo que nos distingue</SectionLabel>
-            <h2 className="section-title" id="features-title">Más que código.<br /><span className="text-dim">Creamos posibilidades.</span></h2>
+            <h2 className="section-title" id="features-title">Más que código.<br /><span className="text-elyon">Creamos posibilidades.</span></h2>
           </div>
           <div className="col-lg-4 offset-lg-1"><p className="section-intro">La tecnología funciona mejor cuando existe una estrategia clara y un equipo que escucha.</p></div>
         </div>
