@@ -25,14 +25,89 @@ const allowedServices = new Set([
   "BOCCA Agency", "CONTPAQi", "Otro proyecto",
 ]);
 
-const errorResponse = (message: string, status: number) => NextResponse.json({ message }, { status });
+// Limitación básica por proceso: Hostinger puede ejecutar varias instancias.
+// Para límites globales resistentes a reinicios, configurar WAF o almacenamiento compartido.
+const MAX_BODY_BYTES = 24_000;
+const WINDOW_MS = 15 * 60 * 1000;
+const MAX_ATTEMPTS = 10;
+const attempts = new Map<string, { count: number; resetAt: number }>();
+
+function retryAfterSeconds(request: NextRequest): number {
+  // Los encabezados IP solo son fiables si el proxy de Hostinger los establece o limpia.
+  const ip = (request.headers.get("x-real-ip") || request.headers.get("x-forwarded-for")?.split(",")[0])?.trim();
+  if (!ip) return 0; // Sin IP fiable, dejamos la limitación al proxy/WAF.
+
+  const now = Date.now();
+  if (attempts.size > 3_000) {
+    for (const [key, entry] of attempts) if (entry.resetAt <= now) attempts.delete(key);
+    if (attempts.size > 3_000) attempts.clear(); // Evita crecimiento ilimitado de memoria.
+  }
+
+  const key = ip.slice(0, 128);
+  const entry = attempts.get(key);
+  if (!entry || entry.resetAt <= now) {
+    attempts.set(key, { count: 1, resetAt: now + WINDOW_MS });
+    return 0;
+  }
+  if (entry.count >= MAX_ATTEMPTS) return Math.ceil((entry.resetAt - now) / 1_000);
+  entry.count += 1;
+  return 0;
+}
+
+async function readLimitedJson(request: NextRequest): Promise<ContactPayload | null> {
+  const reader = request.body?.getReader();
+  if (!reader) return null;
+  let size = 0;
+  const chunks: Uint8Array[] = [];
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    size += value.byteLength;
+    if (size > MAX_BODY_BYTES) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString("utf8")) as ContactPayload;
+  } catch {
+    return null;
+  }
+}
+
+const errorResponse = (message: string, status: number) => NextResponse.json({ message }, { status, headers: { "Cache-Control": "no-store" } });
 const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char] || char);
 
 export async function POST(request: NextRequest) {
   try {
-    if (Number(request.headers.get("content-length") || 0) > 24000) return errorResponse("La solicitud supera el tamaño permitido.", 413);
-    const payload = (await request.json()) as ContactPayload;
-    if (typeof payload !== "object" || !payload) return errorResponse("Solicitud inválida.", 400);
+    // Los navegadores legítimos envían Origin al hacer POST desde nuestro sitio.
+    const origin = request.headers.get("origin");
+    const allowedOrigins = new Set([
+      "https://elyondevs.com", "https://www.elyondevs.com",
+      "http://localhost:3000", "http://127.0.0.1:3000",
+      ...(process.env.CONTACT_ALLOWED_ORIGINS || "").split(",").map((v) => v.trim()).filter(Boolean),
+    ]);
+    if (origin && !allowedOrigins.has(origin)) return errorResponse("Origen de solicitud no permitido.", 403);
+
+    if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
+      return errorResponse("Formato de solicitud no admitido.", 415);
+    }
+    const declaredLength = Number(request.headers.get("content-length") || 0);
+    if (declaredLength > MAX_BODY_BYTES) return errorResponse("La solicitud supera el tamaño permitido.", 413);
+
+    const retryAfter = retryAfterSeconds(request);
+    if (retryAfter > 0) {
+      return NextResponse.json(
+        { message: "Demasiados intentos. Espera unos minutos o escríbenos por WhatsApp." },
+        { status: 429, headers: { "Retry-After": String(retryAfter), "Cache-Control": "no-store" } },
+      );
+    }
+
+    const payload = await readLimitedJson(request);
+    if (typeof payload !== "object" || !payload || Array.isArray(payload)) {
+      return errorResponse("Solicitud inválida o demasiado grande.", 400);
+    }
 
     // Campo trampa: descartar solicitudes automatizadas sin enviar correo.
     if (payload.website) return NextResponse.json({ message: "Solicitud recibida." });
